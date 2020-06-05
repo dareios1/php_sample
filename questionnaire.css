@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/* 基本色 */
+:root {
+    --main-color: #71a320;
+    --accent-color: #701d08;
+    --dark-main-color: #395608;
+    --text-bright-color: #fff;
+    --icon-color: #fff;
+    --icon-bk-color: #ddd;
+    --large-width: 1000px;
+    --middle-width: 800px;
+}
+
+/* 基本設定：フォントサイズ */
+@media (max-width: 599px) {
+    :root {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+    :root {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 800px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+/* 基本設定：ページ全体 */
+body {
+    margin: 0;
+    font-family: 'メイリオ', 'Hiragino Kaku Gothic Pro', 'sans-serif';
+}
+
+/* フッター */
+footer {
+    color: #fff;
+    color: var(--text-bright-color);
+    background-color: #2b5566;
+    background-color: var(--dark-main-color);
+}
+
+footer .container {
+    padding: 40px 20px;
+}
+
+@media (min-width: 768px) {
+    footer .container {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footA {
+        flex: 0 0 40%;
+    }
+    .footB {
+        flex: 0 0 60%;
+    }
+    .footC {
+        flex: 0 0 100%;
+    }
+}
+
+/* フッターA：サイト情報 */
+.footA {
+    margin-bottom: 30px;
+}
+
+.footA h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+}
+
+.footA p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.footA a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* フッターB：フッターメニュー */
+.footB div {
+    margin-bottom: 20px;
+}
+
+.footB h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: solid 1px currentColor;
+    font-size: 14px;
+}
+
+.footB ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footB a {
+    display: block;
+    padding: 5px;
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footB a:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+    .footB {
+        display: flex;
+    }
+    .footB div {
+        flex: 1;
+    }
+    .footB div:not(:first-child) { /*「:first-child」1つ目の子要素が適用先「:not()」指定した条件と一致しない要素が適用先になる。*/
+        margin-left: 40px;
+    }
+}
+
+/* フッターC：コピーライト */
+.footC {
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* フッターD：SNSメニュー */
+.footD {
+    margin-top: 20px;
+}
+
+.footD ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footD a {
+    display: block;
+    margin-right: 8px;
+    padding: 0;
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+    border: solid 1px currentColor;
+    width: 2em;
+    line-height: 2em;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.footD a:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* ヘッダー */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.nohero header {
+    position: static;
+    border-bottom: solid 1px #ddd;
+    border-bottom: solid 1px var(--gray-color);
+}
+
+/* ヘッダーA：サイト名 */
+.headA {
+    display: inline-block;
+    line-height: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #5d9ab2;
+    background-color: var(--main-color);
+    color: #fff;
+    color: var(--text-bright-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+/* ヘッダーB：ナビゲーションメニュー */
+.headB ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.headB a {
+    display: block;
+    padding: 15px;
+    color: inherit;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.headB a:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
+@media (min-width: 768px) {
+    header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1000px;
+        max-width: var(--large-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .headB ul {
+        display: flex;
+    }
+}
+
+/* ヘッダーC：トグルボタン */
+@media (max-width: 767px) {
+    /* 小さい画面用の設定 */
+    header .container-small {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .headC {
+        margin-right: 10px;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 28px;
+        opacity: 0.5;
+        cursor: pointer;
+    }
+    .headC:hover {
+        opacity: 0.3;
+    }
+    .headB {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    /* 大きい画面用の設定 */
+    .headC {
+        display: none;
+    }
+    .headB {
+        display: block !important;
+    }
+}
+
+/* コンテンツページ*/
+.post .container {
+    max-width: 800px;
+    max-width: var(--middle-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 10px;
+}
+
+.post h1 {
+    padding-left: 0.5rem;
+    border-left: solid 0.75rem #bf6a7a;
+    border-left: solid 0.75rem var(--accent-color);
+    font-size: 2rem;
+}
+
+.post p {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.button:hover {
+    background-image: linear-gradient(rgba(255,255,255,0.2),rgba(255,255,255,0.2));
+}
+
+.button input {
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: #bf6a7a;
+    background-color: var(--accent-color);
+    color: #fff;
+    color: var(--text-bright-color);
+    font-size: 20px;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+table,
+td,
+th {
+    border: 1px grey solid;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 10px;
+    background-color: #A4C6FF;
+}
+
+table td {
+    padding: 3px 10px;
+}
